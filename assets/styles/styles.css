@@ -10,13 +10,13 @@
   font-size: 25px;
 }
 .hangman__word .guess {
-  font-size: 50px;
+  font-size: 30px;
 }
 .hangman__guess__letters > li {
   font-size: 30px;
 }
 .hangman__submit-guess__input, .hangman__submit-guess__btn {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 * {
@@ -48,6 +48,7 @@ body .hangman__word {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 90%;
 }
 body .hangman__word__counter {
   display: flex;
@@ -57,8 +58,15 @@ body .hangman__word .guess {
   display: flex;
 }
 body .hangman__word .guess .alphabet-guess {
+  height: 50px;
+  width: 20px;
   margin: 0 10px;
   border-bottom: 4px solid #FBF7F5;
+  display: flex;
+  justify-content: center;
+}
+body .hangman__word .guess .alphabet-guess .letter {
+  display: flex;
 }
 body .hangman__guess {
   display: flex;

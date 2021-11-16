@@ -6,14 +6,16 @@ const alphabets = document.querySelectorAll(".alphabet");
 const alphabetInput = document.querySelector(".hangman__submit-guess__input");
 const inputSubmit = document.querySelector(".hangman__submit-guess__btn");
 
+// const letters = document.querySelectorAll("h2");
+
 
 let guess = "";
-let word = "word";
+let word = "hidden";
 const wordArr = word.split("");
 
 
 const generateBlankSpaces = (index) => {
-  return `<div class = "alphabet-guess" value = "${index}"> &nbsp; </div>`
+  return `<div class = "alphabet-guess" value = "${index}"> <h2 class = "letter"> ${wordArr[index]} </h2></div>`
 }
 
 const generateWord = () => {
@@ -23,8 +25,6 @@ const generateWord = () => {
 }
 
 generateWord();
-
-
 
 
 const checkAlphabet = () => {

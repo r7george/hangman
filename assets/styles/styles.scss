@@ -39,6 +39,15 @@ body {
         display: flex;
         margin-bottom: 25px;
       }
+
+      .guess {
+        display: flex;
+
+        .alphabet-guess {
+          margin: 0 10px;
+          border-bottom: 4px solid $textColor;
+        }
+      }
     }
 
     &__guess {

@@ -53,6 +53,13 @@ body .hangman__word__counter {
   display: flex;
   margin-bottom: 25px;
 }
+body .hangman__word .guess {
+  display: flex;
+}
+body .hangman__word .guess .alphabet-guess {
+  margin: 0 10px;
+  border-bottom: 4px solid #FBF7F5;
+}
 body .hangman__guess {
   display: flex;
   flex-direction: column;

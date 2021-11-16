@@ -8,19 +8,43 @@ const inputSubmit = document.querySelector(".hangman__submit-guess__btn");
 
 
 let guess = "";
+let word = "word";
+const wordArr = word.split("");
 
+
+const generateBlankSpaces = (index) => {
+  return `<div class = "alphabet-guess" value = "${index}"> &nbsp; </div>`
+}
+
+const generateWord = () => {
+  for (let i = 0; i < wordArr.length; i++) {
+    wordDisplay.innerHTML += generateBlankSpaces(i);
+  }
+}
+
+generateWord();
+
+
+
+
+const checkAlphabet = () => {
+  const isCorrectGuess = word.toLowerCase().includes(guess.toLowerCase());
+  if (isCorrectGuess) {
+    console.log("success?");
+  }
+  else {
+    alphabets.forEach((alphabet) => {
+      if (guess.toLowerCase() == alphabet.innerHTML) {
+          alphabet.style.display="none";
+      }
+    });
+  }
+}
 
 const handleClickGuess = () => {
   guess = alphabetInput.value;
-  console.log(guess);
-}
-
-const checkAlphabet = () => {
-  alphabets.forEach((alphabet) => {
-    if (guess) {
-      
-    }
-  })
+  console.log(word.toLowerCase().includes(guess.toLowerCase()))
+  checkAlphabet();
 }
 
 

@@ -16,7 +16,7 @@
   font-size: 30px;
 }
 .hangman__submit-guess__input, .hangman__submit-guess__btn {
-  font-size: 20px;
+  font-size: 30px;
 }
 
 * {
@@ -81,7 +81,8 @@ body .hangman__submit-guess__input, body .hangman__submit-guess__btn {
 body .hangman__submit-guess__input {
   margin-right: 20px;
   width: 30%;
+  text-align: center;
 }
 body .hangman__submit-guess__btn {
-  padding: 10px;
+  padding: 5px 10px;
 }

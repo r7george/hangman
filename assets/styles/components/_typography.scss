@@ -1,0 +1,49 @@
+@import "_variables";
+
+* {
+  font-family: $primaryText;
+  color: $textColor;
+}
+
+.hangman {
+  
+  &__header {
+    font-size: 60px;
+  }
+
+  &__word {
+
+    &__counter {
+
+      &__text {
+        font-size: 25px;
+      }
+
+    }
+
+    .guess {
+      font-size: 50px;
+    }
+
+  }
+
+  &__guess {
+
+    &__letters {
+
+      > li {
+        font-size: 30px;
+      }
+
+    }
+
+  }
+
+  &__submit-guess {
+
+    &__input, &__btn {
+      font-size: 20px;
+    }
+  }
+
+}

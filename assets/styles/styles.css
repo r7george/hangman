@@ -1,0 +1,87 @@
+* {
+  font-family: "Pangolin", cursive;
+  color: #FBF7F5;
+}
+
+.hangman__header {
+  font-size: 60px;
+}
+.hangman__word__counter__text {
+  font-size: 25px;
+}
+.hangman__word .guess {
+  font-size: 50px;
+}
+.hangman__guess__letters > li {
+  font-size: 30px;
+}
+.hangman__submit-guess__input, .hangman__submit-guess__btn {
+  font-size: 20px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body .hangman {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: space-evenly;
+}
+body .hangman__header {
+  margin-top: 50px;
+}
+body .hangman__word {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .hangman__word__counter {
+  display: flex;
+  margin-bottom: 25px;
+}
+body .hangman__guess {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+body .hangman__guess__letters {
+  display: flex;
+  width: 90%;
+  margin: 5px 0;
+  justify-content: center;
+}
+body .hangman__guess__letters > li {
+  list-style: none;
+  padding: 0 15px;
+}
+body .hangman__submit-guess {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+body .hangman__submit-guess__input, body .hangman__submit-guess__btn {
+  background: none;
+  border: 4px solid #FBF7F5;
+}
+body .hangman__submit-guess__input {
+  margin-right: 20px;
+  width: 30%;
+}
+body .hangman__submit-guess__btn {
+  padding: 10px;
+}

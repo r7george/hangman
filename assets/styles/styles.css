@@ -95,7 +95,7 @@ body .hangman__submit-guess__input, body .hangman__submit-guess__btn {
 }
 body .hangman__submit-guess__input {
   margin-right: 20px;
-  width: 30%;
+  width: 120px;
   text-align: center;
 }
 body .hangman__submit-guess__btn {

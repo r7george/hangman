@@ -8,6 +8,8 @@ const inputSubmit = document.querySelector(".hangman__submit-guess__btn");
 
 
 let guess = "";
+let guessArr = [];
+let correctGuessArr = [];
 let word = "hidden";
 const wordArr = word.split("");
 
@@ -59,24 +61,41 @@ const getCorrectGuessIndex = (arr, val) => {
 
 const letters = document.querySelectorAll("h2");
 
-const checkAlphabet = () => {
-  const isCorrectGuess = word.toLowerCase().includes(guess.toLowerCase());
-  if (isCorrectGuess) {
-    const guessIndexArr = getCorrectGuessIndex(wordArr, guess);
-    guessIndexArr.map((index) => {
-      letters[index].style.display = "flex";
-    });
-  }
-  else {
-    alphabets.forEach((alphabet) => {
-      if (guess.toLowerCase() == alphabet.innerHTML) {
-          alphabet.style.display="none";
-          guessCounterCountdown();
-      }
-    });
-  }
+const makeDisplayFlex = () => {
+  const guessIndexArr = getCorrectGuessIndex(wordArr, guess);
+  guessIndexArr.map((index) => {
+    letters[index].style.display = "flex";
+  });
 }
 
+const checkAlphabet = () => {
+  const isCorrectGuess = word.toLowerCase().includes(guess.toLowerCase());
+  const isNotNewGuess = guessArr.includes(guess.toLowerCase());
+  console.log(isNotNewGuess);
+  if(!isNotNewGuess) {
+    if (isCorrectGuess) {
+      guessArr.push(guess.toLowerCase());
+      correctGuessArr.push(guess.toLowerCase());
+      if (correctGuessArr.length == wordArr.length) {
+        makeDisplayFlex();
+        alert("Winner winner chicken dinner");
+      }
+      else {
+        makeDisplayFlex();
+      }
+     
+    }
+    else {
+      guessArr.push(guess.toLowerCase());
+      alphabets.forEach((alphabet) => {
+        if (guess.toLowerCase() == alphabet.innerHTML) {
+            alphabet.style.display="none";
+            guessCounterCountdown();
+        }
+      });
+    }
+  }
+}
 
 
 const handleClickGuess = () => {

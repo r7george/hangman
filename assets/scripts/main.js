@@ -3,7 +3,7 @@ const guessNumber = document.querySelector(".guess-number");
 
 const alphabets = document.querySelectorAll(".alphabet");
 
-const winnerOutput = document.querySelector(".hangman__word__counter");
+const gameEndOutput = document.querySelector(".hangman__word__counter");
 
 const alphabetInput = document.querySelector(".hangman__submit-guess__input");
 const inputSubmit = document.querySelector(".hangman__submit-guess__btn");
@@ -41,6 +41,11 @@ const generateWord = () => {
 generateWord();
 
 
+const losingMessage = () => {
+  gameEndOutput.innerHTML = `<h2 class = "hangman__word__counter__winning-message"> BETTER LUCK NEXT TIME ._. </h2>`;
+}
+
+
 const guessCounterCountdown = () => {
   let guessCount = parseInt(guessNumber.innerHTML);
   guessCount -= 1;
@@ -48,8 +53,7 @@ const guessCounterCountdown = () => {
     guessNumber.innerHTML = `${guessCount}`;
   }
   else {
-    alert("Game Over!");
-    resetGame();
+    losingMessage();
   }
 }
 
@@ -75,7 +79,7 @@ const makeDisplayFlex = () => {
 
 
 const winningMessage = () => {
-  winnerOutput.innerHTML = `<h2 class = "hangman__word__counter__winning-message"> YOU'VE GUESSED IT! CONGRATS! </h2>`;
+  gameEndOutput.innerHTML = `<h2 class = "hangman__word__counter__winning-message"> WINNER WINNER CHICKEN DINNER! </h2>`;
 }
 
 
@@ -112,7 +116,7 @@ const checkAlphabet = () => {
 
 const handleClickGuess = () => {
   guess = alphabetInput.value;
-  console.log(word.toLowerCase().includes(guess.toLowerCase()))
+  alphabetInput.value = "";
   checkAlphabet();
 }
 

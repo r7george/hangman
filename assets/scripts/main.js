@@ -6,16 +6,24 @@ const alphabets = document.querySelectorAll(".alphabet");
 const alphabetInput = document.querySelector(".hangman__submit-guess__input");
 const inputSubmit = document.querySelector(".hangman__submit-guess__btn");
 
-// const letters = document.querySelectorAll("h2");
-
 
 let guess = "";
 let word = "hidden";
 const wordArr = word.split("");
 
 
+const resetGame = () => {
+  guessNumber.innerHTML = `6`;
+  alphabets.forEach((alphabet) => {
+    alphabet.style.display = "flex";
+  });
+  letters.forEach((letter) => {
+    letter.style.display = "none";
+  });
+}
+
 const generateBlankSpaces = (index) => {
-  return `<div class = "alphabet-guess" value = "${index}"> <h2 class = "letter"> ${wordArr[index]} </h2></div>`
+  return `<div class = "alphabet-guess" value = "${index}"> <h2 class = "letter"> ${wordArr[index]} </h2></div>`;
 }
 
 const generateWord = () => {
@@ -26,20 +34,50 @@ const generateWord = () => {
 
 generateWord();
 
+const guessCounterCountdown = () => {
+  let guessCount = parseInt(guessNumber.innerHTML);
+  guessCount -= 1;
+  if (guessCount > 0) {
+    guessNumber.innerHTML = `${guessCount}`;
+  }
+  else {
+    alert("Game Over!");
+    resetGame();
+  }
+}
+
+
+const getCorrectGuessIndex = (arr, val) => {
+  const indexes = [];
+  let i = -1;
+  while ((i = arr.indexOf(val, i+1)) != -1) {
+    indexes.push(i);
+  }
+  return indexes;
+}
+
+
+const letters = document.querySelectorAll("h2");
 
 const checkAlphabet = () => {
   const isCorrectGuess = word.toLowerCase().includes(guess.toLowerCase());
   if (isCorrectGuess) {
-    console.log("success?");
+    const guessIndexArr = getCorrectGuessIndex(wordArr, guess);
+    guessIndexArr.map((index) => {
+      letters[index].style.display = "flex";
+    });
   }
   else {
     alphabets.forEach((alphabet) => {
       if (guess.toLowerCase() == alphabet.innerHTML) {
           alphabet.style.display="none";
+          guessCounterCountdown();
       }
     });
   }
 }
+
+
 
 const handleClickGuess = () => {
   guess = alphabetInput.value;

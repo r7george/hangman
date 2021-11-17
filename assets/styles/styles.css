@@ -6,6 +6,9 @@
 .hangman__header {
   font-size: 60px;
 }
+.hangman__word__counter__winning-message {
+  font-size: 40px;
+}
 .hangman__word__counter__text {
   font-size: 25px;
 }
@@ -54,6 +57,9 @@ body .hangman__word__counter {
   display: flex;
   margin-bottom: 25px;
 }
+body .hangman__word__counter__winning-message {
+  text-align: center;
+}
 body .hangman__word .guess {
   display: flex;
 }
@@ -100,4 +106,9 @@ body .hangman__submit-guess__input {
 }
 body .hangman__submit-guess__btn {
   padding: 5px 10px;
+}
+body .hangman__submit-guess__btn:hover {
+  background-color: #FBF7F5;
+  color: #090605;
+  cursor: pointer;
 }

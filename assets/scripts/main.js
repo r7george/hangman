@@ -3,6 +3,8 @@ const guessNumber = document.querySelector(".guess-number");
 
 const alphabets = document.querySelectorAll(".alphabet");
 
+const winnerOutput = document.querySelector(".hangman__word__counter");
+
 const alphabetInput = document.querySelector(".hangman__submit-guess__input");
 const inputSubmit = document.querySelector(".hangman__submit-guess__btn");
 
@@ -10,7 +12,7 @@ const inputSubmit = document.querySelector(".hangman__submit-guess__btn");
 let guess = "";
 let guessArr = [];
 let correctGuessArr = [];
-let word = "hidden";
+let word = "win";
 const wordArr = word.split("");
 
 
@@ -22,6 +24,8 @@ const resetGame = () => {
   letters.forEach((letter) => {
     letter.style.display = "none";
   });
+  guessArr = [];
+  correctGuessArr = [];
 }
 
 const generateBlankSpaces = (index) => {
@@ -35,6 +39,7 @@ const generateWord = () => {
 }
 
 generateWord();
+
 
 const guessCounterCountdown = () => {
   let guessCount = parseInt(guessNumber.innerHTML);
@@ -59,7 +64,7 @@ const getCorrectGuessIndex = (arr, val) => {
 }
 
 
-const letters = document.querySelectorAll("h2");
+const letters = document.querySelectorAll(".letter");
 
 const makeDisplayFlex = () => {
   const guessIndexArr = getCorrectGuessIndex(wordArr, guess);
@@ -68,17 +73,24 @@ const makeDisplayFlex = () => {
   });
 }
 
+
+const winningMessage = () => {
+  winnerOutput.innerHTML = `<h2 class = "hangman__word__counter__winning-message"> YOU'VE GUESSED IT! CONGRATS! </h2>`;
+}
+
+
 const checkAlphabet = () => {
   const isCorrectGuess = word.toLowerCase().includes(guess.toLowerCase());
   const isNotNewGuess = guessArr.includes(guess.toLowerCase());
   console.log(isNotNewGuess);
   if(!isNotNewGuess) {
     if (isCorrectGuess) {
+      const uniqWordArr = [...new Set(wordArr)];
       guessArr.push(guess.toLowerCase());
       correctGuessArr.push(guess.toLowerCase());
-      if (correctGuessArr.length == wordArr.length) {
+      if (correctGuessArr.length == uniqWordArr.length) {
         makeDisplayFlex();
-        alert("Winner winner chicken dinner");
+        winningMessage();
       }
       else {
         makeDisplayFlex();

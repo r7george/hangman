@@ -2,7 +2,7 @@
 
 * {
   font-family: $primaryText;
-  color: $textColor;
+  color: $primaryColor;
 }
 
 .hangman {
@@ -14,6 +14,10 @@
   &__word {
 
     &__counter {
+
+      &__winning-message {
+        font-size: 40px;
+      }
 
       &__text {
         font-size: 25px;

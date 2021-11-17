@@ -6,13 +6,13 @@ const alphabets = document.querySelectorAll(".alphabet");
 const gameEndOutput = document.querySelector(".hangman__word__counter");
 
 const alphabetInput = document.querySelector(".hangman__submit-guess__input");
-const inputSubmit = document.querySelector(".hangman__submit-guess__btn");
+const inputSubmit = document.querySelector("#submit");
 
 
 let guess = "";
 let guessArr = [];
 let correctGuessArr = [];
-let word = "win";
+let word = "variable";
 const wordArr = word.split("");
 
 
@@ -26,6 +26,7 @@ const resetGame = () => {
   });
   guessArr = [];
   correctGuessArr = [];
+  gameEndOutput.innerHTML = `<p class="hangman__word__counter__text">Guesses left:&nbsp; </p><p class="hangman__word__counter__text guess-number">6</p>`;
 }
 
 const generateBlankSpaces = (index) => {
@@ -79,7 +80,15 @@ const makeDisplayFlex = () => {
 
 
 const winningMessage = () => {
-  gameEndOutput.innerHTML = `<h2 class = "hangman__word__counter__winning-message"> WINNER WINNER CHICKEN DINNER! </h2>`;
+  gameEndOutput.innerHTML = `<h2 class = "hangman__word__counter__winning-message"> WINNER WINNER CHICKEN DINNER </h2>`;
+}
+
+const removeAlphabet = () => {
+  alphabets.forEach((alphabet) => {
+    if (guess.toLowerCase() == alphabet.innerHTML) {
+        alphabet.style.display="none";
+    }
+  });
 }
 
 
@@ -89,6 +98,7 @@ const checkAlphabet = () => {
   console.log(isNotNewGuess);
   if(!isNotNewGuess) {
     if (isCorrectGuess) {
+      removeAlphabet();
       const uniqWordArr = [...new Set(wordArr)];
       guessArr.push(guess.toLowerCase());
       correctGuessArr.push(guess.toLowerCase());
@@ -103,12 +113,8 @@ const checkAlphabet = () => {
     }
     else {
       guessArr.push(guess.toLowerCase());
-      alphabets.forEach((alphabet) => {
-        if (guess.toLowerCase() == alphabet.innerHTML) {
-            alphabet.style.display="none";
-            guessCounterCountdown();
-        }
-      });
+      removeAlphabet();
+      guessCounterCountdown();
     }
   }
 }
@@ -122,5 +128,4 @@ const handleClickGuess = () => {
 
 
 inputSubmit.addEventListener("click", handleClickGuess);
-
-
+document.querySelector("#reset").addEventListener("click", resetGame);

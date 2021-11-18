@@ -9,10 +9,12 @@ const alphabetInput = document.querySelector(".hangman__submit-guess__input");
 const inputSubmit = document.querySelector("#submit");
 
 
+let wordsArr = ["HTML", "CSS", "JavaScript", "flexbox", "grid", "bootstrap", "function", "responsive", "iterator", "object", "classes", "testing", "hangman"];
+
 let guess = "";
 let guessArr = [];
 let correctGuessArr = [];
-let word = "variable";
+let word = wordsArr[Math.floor(Math.random()*wordsArr.length)];
 const wordArr = word.split("");
 
 

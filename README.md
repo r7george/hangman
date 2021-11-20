@@ -1,6 +1,8 @@
 # JavaScript Hangman
 
-![hangman screenshot](./assets/images/hangman_screenshot.png?style=centerme)
+<p align="center">
+  <img src="./assets/images/hangman_screenshot.png">
+</p>
 
 ### Author - Reuben George
 A chalkboard-based hangman game.

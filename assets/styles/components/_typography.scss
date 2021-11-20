@@ -11,43 +11,36 @@
     font-size: 60px;
   }
 
-  &__word {
+  .countdown {
 
-    &__counter {
-
-      &__winning-message {
-        font-size: 40px;
-      }
-
-      &__text {
-        font-size: 25px;
-      }
-
+    &__end-message {
+      font-size: 40px;
     }
 
-    .guess {
+    &__title-text, &__guess-number {
+      font-size: 25px;
+    }
+
+    &__guess-word {
       font-size: 30px;
     }
 
   }
 
-  &__guess {
+  .guessing {
 
-    &__letters {
-
-      > li {
-        font-size: 30px;
-      }
-
+    &__letter {
+      font-size: 30px;
     }
 
   }
 
-  &__submit-guess {
+  .user-inputs {
 
-    &__input, &__btn {
+    &_guess, &__btn {
       font-size: 25px;
     }
+    
   }
 
 }

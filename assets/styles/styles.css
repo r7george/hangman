@@ -6,19 +6,19 @@
 .hangman__header {
   font-size: 60px;
 }
-.hangman__word__counter__winning-message {
+.hangman .countdown__end-message {
   font-size: 40px;
 }
-.hangman__word__counter__text {
+.hangman .countdown__title-text, .hangman .countdown__guess-number {
   font-size: 25px;
 }
-.hangman__word .guess {
+.hangman .countdown__guess-word {
   font-size: 30px;
 }
-.hangman__guess__letters > li {
+.hangman .guessing__letter {
   font-size: 30px;
 }
-.hangman__submit-guess__input, .hangman__submit-guess__btn {
+.hangman .user-inputs_guess, .hangman .user-inputs__btn {
   font-size: 25px;
 }
 
@@ -47,23 +47,23 @@ body .hangman {
 body .hangman__header {
   margin-top: 50px;
 }
-body .hangman__word {
+body .hangman .countdown {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 90%;
 }
-body .hangman__word__counter {
+body .hangman .countdown__container {
   display: flex;
   margin-bottom: 25px;
 }
-body .hangman__word__counter__winning-message {
+body .hangman .countdown__end-message {
   text-align: center;
 }
-body .hangman__word .guess {
+body .hangman .countdown__guess-word {
   display: flex;
 }
-body .hangman__word .guess .alphabet-guess {
+body .hangman .countdown__letter-div {
   height: 50px;
   width: 20px;
   margin: 0 10px;
@@ -71,44 +71,44 @@ body .hangman__word .guess .alphabet-guess {
   display: flex;
   justify-content: center;
 }
-body .hangman__word .guess .alphabet-guess .letter {
+body .hangman .countdown__letter {
   display: none;
 }
-body .hangman__guess {
+body .hangman .guessing {
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
 }
-body .hangman__guess__letters {
+body .hangman .guessing__letter-display {
   display: flex;
   width: 90%;
   margin: 5px 0;
   justify-content: center;
 }
-body .hangman__guess__letters > li {
+body .hangman .guessing__letter {
   list-style: none;
   padding: 0 15px;
 }
-body .hangman__submit-guess {
+body .hangman .user-inputs {
   width: 90%;
   display: flex;
   justify-content: center;
 }
-body .hangman__submit-guess__input, body .hangman__submit-guess__btn {
+body .hangman .user-inputs__guess, body .hangman .user-inputs__btn {
   background: none;
   border: 4px solid #FBF7F5;
 }
-body .hangman__submit-guess__input {
+body .hangman .user-inputs__guess {
   margin-right: 20px;
   margin-left: 20px;
   width: 120px;
   text-align: center;
 }
-body .hangman__submit-guess__btn {
+body .hangman .user-inputs__btn {
   padding: 5px 10px;
 }
-body .hangman__submit-guess__btn:hover {
+body .hangman .user-inputs__btn:hover {
   background-color: #FBF7F5;
   color: #090605;
   cursor: pointer;

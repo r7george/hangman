@@ -25,61 +25,62 @@
 
     
     <!-- div for the word being guessed -->
-    <div class="hangman__word">
+    <div class="countdown">
 
-      <div class="hangman__word__counter">
-        <p class="hangman__word__counter__text">Guesses left:&nbsp; </p><p class="hangman__word__counter__text guess-number">6</p>
+      <div class="countdown__container">
+        <p class="countdown__title-text">Guesses left:&nbsp; </p>
+        <p class="countdown__guess-number"></p>
       </div>
 
-      <div class="guess"></div>
+      <div class="countdown__guess-word"></div>
 
     </div>
 
 
     <!-- div for the guessses -->
-    <div class="hangman__guess">
+    <div class="guessing">
 
-      <ul class="hangman__guess__letters">
-        <li class="alphabet">a</li>
-        <li class="alphabet">b</li>
-        <li class="alphabet">c</li>
-        <li class="alphabet">d</li>
-        <li class="alphabet">e</li>
-        <li class="alphabet">f</li>
-        <li class="alphabet">g</li>
+      <ul class="guessing__letter-display">
+        <li class="guessing__letter">a</li>
+        <li class="guessing__letter">b</li>
+        <li class="guessing__letter">c</li>
+        <li class="guessing__letter">d</li>
+        <li class="guessing__letter">e</li>
+        <li class="guessing__letter">f</li>
+        <li class="guessing__letter">g</li>
       </ul>
-      <ul class="hangman__guess__letters">
-        <li class="alphabet">h</li>
-        <li class="alphabet">i</li>
-        <li class="alphabet">j</li>
-        <li class="alphabet">k</li>
-        <li class="alphabet">l</li>
-        <li class="alphabet">m</li>
-        <li class="alphabet">n</li>
+      <ul class="guessing__letter-display">
+        <li class="guessing__letter">h</li>
+        <li class="guessing__letter">i</li>
+        <li class="guessing__letter">j</li>
+        <li class="guessing__letter">k</li>
+        <li class="guessing__letter">l</li>
+        <li class="guessing__letter">m</li>
+        <li class="guessing__letter">n</li>
       </ul>
-      <ul class="hangman__guess__letters">
-        <li class="alphabet">o</li>
-        <li class="alphabet">p</li>
-        <li class="alphabet">q</li>
-        <li class="alphabet">r</li>
-        <li class="alphabet">s</li>
-        <li class="alphabet">t</li>
-        <li class="alphabet">u</li>
+      <ul class="guessing__letter-display">
+        <li class="guessing__letter">o</li>
+        <li class="guessing__letter">p</li>
+        <li class="guessing__letter">q</li>
+        <li class="guessing__letter">r</li>
+        <li class="guessing__letter">s</li>
+        <li class="guessing__letter">t</li>
+        <li class="guessing__letter">u</li>
       </ul>
-      <ul class="hangman__guess__letters">
-        <li class="alphabet">v</li>
-        <li class="alphabet">w</li>
-        <li class="alphabet">x</li>
-        <li class="alphabet">y</li>
-        <li class="alphabet">z</li>
+      <ul class="guessing__letter-display">
+        <li class="guessing__letter">v</li>
+        <li class="guessing__letter">w</li>
+        <li class="guessing__letter">x</li>
+        <li class="guessing__letter">y</li>
+        <li class="guessing__letter">z</li>
       </ul>
 
     </div>
 
-    <div class="hangman__submit-guess">
-      <button class="hangman__submit-guess__btn" id="reset">reset</button>
-      <input class="hangman__submit-guess__input" type="text" maxlength="1">
-      <button class="hangman__submit-guess__btn" id="submit">submit</button>
+    <div class="user-inputs">
+      <button class="user-inputs__btn" id="reset">reset</button>
+      <input class="user-inputs__guess" type="text" maxlength="1">
+      <button class="user-inputs__btn" id="submit">submit</button>
     </div>
   
   </main>

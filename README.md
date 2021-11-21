@@ -52,4 +52,4 @@ The game is lost when the guesses left counter reaches zero before the word has 
 
 
 ## Future implementation
-As my reset button it's completely functioning just yet, I think the next step would be figuring out how to fix that so it has full functionality. With that being a smaller task, the next step would be for me to animate a hangman graphic which dynamically changes based on the number of guesses left.
+As my reset button is not completely functioning just yet, I think the next step would be figuring out how to fix that so it's working as it should be. With that being a smaller task, the real future implementation would have animate a hangman graphic which dynamically changes based on the number of guesses left.

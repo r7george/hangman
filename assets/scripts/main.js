@@ -3,7 +3,8 @@ const guessNumber = document.querySelector(".countdown__guess-number");
 
 const alphabets = document.querySelectorAll(".guessing__letter");
 
-const gameEndOutput = document.querySelector(".countdown__container");
+const guessContainer = document.querySelector(".countdown__container");
+const endOutput = document.querySelector(".countdown__end-message");
 
 const alphabetInput = document.querySelector(".user-inputs__guess");
 const submitBtn = document.querySelector("#submit");
@@ -85,7 +86,7 @@ const hasWon = (guessArr, wordArr) => {
 
 // sets the message at the end of the game
 const setGameEndMsg = (msg) => {
-  gameEndOutput.innerHTML = `<h2 class = "countdown__end-message"> ${msg} </h2>`;
+  endOutput.innerHTML = `<h2> ${msg} </h2>`;
 }
 
 // decrement the life counter
@@ -176,9 +177,7 @@ const handleClickReset = () => {
     letter.style.display = "none";
   });
 
-  // reset number doesn't show up when the game is reset due to this
-  gameEndOutput.innerHTML = `<p class="countdown__title-text">Guesses left:&nbsp; </p>
-  <p class="countdown__guess-number"></p>`;
+  endOutput.innerHTML = ``;
 
   word = wordsArr[Math.floor(Math.random()*wordsArr.length)].toLowerCase();
   wordArr = word.split("");
@@ -187,9 +186,6 @@ const handleClickReset = () => {
   gameInit();
   
   letters = document.querySelectorAll(".countdown__letter");
-
-  
-  // document.location.reload();
 }
 
 
